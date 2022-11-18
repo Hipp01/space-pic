@@ -4,6 +4,24 @@ part 'space_data.g.dart';
 
 @JsonSerializable()
 class SpaceData {
+  @JsonKey(name: 'date')
+  final String date;
+
+  @JsonKey(name: "explanation")
+  final String explanation;
+
+  @JsonKey(name: "media_type")
+  final String media_type;
+
+  @JsonKey(name: "service_version")
+  final String service_version;
+
+  @JsonKey(name: "title")
+  final String title;
+
+  @JsonKey(name: "url")
+  final String url;
+
   SpaceData({
     required this.date,
     required this.explanation,
@@ -17,11 +35,4 @@ class SpaceData {
       _$SpaceDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$SpaceDataToJson(this);
-
-  final String date;
-  final String explanation;
-  final String media_type;
-  final String service_version;
-  final String title;
-  final String url;
 }
