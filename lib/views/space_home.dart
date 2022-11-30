@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:space_pic/models/space_data.dart';
 
 import 'current_space_picture_widget.dart';
+import 'day_space_widget.dart';
 
 class SpaceHome extends StatefulWidget {
   const SpaceHome({super.key, required String title});
@@ -15,6 +16,8 @@ class _SpaceHomeState extends State<SpaceHome> {
   SpaceData? _spaceData;
   DateTime? _startdate;
   DateTime? _enddate;
+
+  var _response;
 
   _fetchSpaceData() async {
     var response = await Dio().get(
@@ -34,7 +37,8 @@ class _SpaceHomeState extends State<SpaceHome> {
     setState(() {
       _startdate = DateTime.now().subtract(Duration(days: 7));
       _enddate = DateTime.now();
-      _spaceData = SpaceData.fromJson(response.data[0]);
+      _spaceData = SpaceData.fromJson(response.data[response.data.length - 1]);
+      _response = response.data;
     });
   }
 
@@ -70,12 +74,27 @@ class _SpaceHomeState extends State<SpaceHome> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            CurrentSpacePictureWidget(spaceData: _spaceData!),
+            CurrentSpacePictureWidget(
+              spaceData: _spaceData!,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Divider(),
+            ),
+            Expanded(
+                child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3),
+                    itemCount: _response.length,
+                    itemBuilder: ((context, index) => DaySpaceWidget(
+                          spaceData: SpaceData.fromJson(_response[index]),
+                        )))),
           ],
         ),
       ),

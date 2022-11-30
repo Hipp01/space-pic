@@ -26,7 +26,7 @@ class CurrentSpacePictureWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                Utils.randomImage(),
+                Utils.associaiteImage(this._spaceData.explanation),
                 fit: BoxFit.cover,
               ),
             ),
