@@ -16,25 +16,16 @@ class CurrentSpacePictureWidget extends StatelessWidget {
     return InkWell(
       child: Column(
         children: [
-          const Text("Picture of the day",
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            width: 200,
+          SizedBox(
+            height: 150,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                Utils.associaiteImage(this._spaceData.explanation),
-                fit: BoxFit.cover,
+                Utils.associaiteImage(_spaceData.explanation),
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(this._spaceData.date),
+          Text(_spaceData.date),
         ],
       ),
       onTap: () {

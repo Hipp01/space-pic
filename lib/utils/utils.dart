@@ -30,25 +30,25 @@ class Utils {
   }
 
   static String associaiteImage(String description) {
-    if (description.contains('Mars')) {
+    if (description.toLowerCase().contains('mars')) {
       return 'assets/images/4.jpg';
-    } else if (description.contains('Jupiter')) {
+    } else if (description.toLowerCase().contains('jupiter')) {
       return 'assets/images/5.jpg';
-    } else if (description.contains('Saturn')) {
+    } else if (description.toLowerCase().contains('saturn')) {
       return 'assets/images/6.jpg';
-    } else if (description.contains('Uranus')) {
+    } else if (description.toLowerCase().contains('uranus')) {
       return 'assets/images/7.jpg';
-    } else if (description.contains('Neptune')) {
+    } else if (description.toLowerCase().contains('neptune')) {
       return 'assets/images/8.jpg';
-    } else if (description.contains('Moon')) {
+    } else if (description.toLowerCase().contains('moon')) {
       return 'assets/images/9.jpg';
-    } else if (description.contains('Sun')) {
+    } else if (description.toLowerCase().contains('sun')) {
       return 'assets/images/0.jpg';
-    } else if (description.contains('Earth')) {
+    } else if (description.toLowerCase().contains('earth')) {
       return 'assets/images/3.jpg';
-    } else if (description.contains('Venus')) {
+    } else if (description.toLowerCase().contains('venus')) {
       return 'assets/images/2.jpg';
-    } else if (description.contains('Mercury')) {
+    } else if (description.toLowerCase().contains('mercury')) {
       return 'assets/images/1.jpg';
     } else {
       return randomImage();

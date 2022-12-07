@@ -38,8 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
   json_annotation: ^4.7.0
-  string_translate: ^1.4.4
+  youtube_player_flutter: ^8.1.1
+  vimeo_video_player: ^0.0.6
+  intl:
 
+  
 
 dev_dependencies:
   flutter_test:

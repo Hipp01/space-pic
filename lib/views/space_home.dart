@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:intl/intl.dart';
 import 'package:space_pic/models/space_data.dart';
 
 import 'current_space_picture_widget.dart';
@@ -93,8 +94,14 @@ class _SpaceHomeState extends State<SpaceHome> {
                             crossAxisCount: 3),
                     itemCount: _response.length,
                     itemBuilder: ((context, index) => DaySpaceWidget(
-                          spaceData: SpaceData.fromJson(_response[index]),
+                          spaceData: SpaceData.fromJson(
+                              _response[_response.length - index - 1]),
                         )))),
+            if (_enddate != null)
+              Text(
+                  "Données mises à jour le ${DateFormat.yMd().format(_enddate!)} à ${DateFormat.Hms().format(_enddate!)}",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.purple)),
           ],
         ),
       ),
