@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="50ef08c4-4394-4089-8c86-00173345aa9d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/current_space_picture_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/current_space_picture_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/day_space_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/day_space_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/detail_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/detail_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/space_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/space_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
