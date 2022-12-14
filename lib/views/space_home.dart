@@ -91,11 +91,11 @@ class _SpaceHomeState extends State<SpaceHome> {
                 child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3),
-                    itemCount: _response.length,
+                            crossAxisCount: 2),
+                    itemCount: _response.length - 1,
                     itemBuilder: ((context, index) => DaySpaceWidget(
                           spaceData: SpaceData.fromJson(
-                              _response[_response.length - index - 1]),
+                              _response[_response.length - index - 2]),
                         )))),
             if (_enddate != null)
               Text(
