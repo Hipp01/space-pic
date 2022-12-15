@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:intl/intl.dart';
 import 'package:space_pic/models/space_data.dart';
+import 'package:sensors_plus/sensors_plus.dart';
 
 import 'current_space_picture_widget.dart';
 import 'day_space_widget.dart';
@@ -17,6 +20,7 @@ class _SpaceHomeState extends State<SpaceHome> {
   SpaceData? _spaceData;
   DateTime? _startdate;
   DateTime? _enddate;
+  bool _popup = false;
 
   var _response;
 
@@ -43,10 +47,39 @@ class _SpaceHomeState extends State<SpaceHome> {
     });
   }
 
+  _accelerometre() async {
+    userAccelerometerEvents.listen((UserAccelerometerEvent event) {
+      var x = num.parse(event.x.toStringAsFixed(2));
+      var y = num.parse(event.y.toStringAsFixed(2));
+      var z = num.parse(event.z.toStringAsFixed(2));
+      Widget okButton = TextButton(
+        child: Text("OK"),
+        onPressed: () {
+          Navigator.of(context).pop();
+          _popup = false;
+        },
+      );
+      if ((x > 8 || x < -8 || y > 8 || y < -8 || z > 8 || z < -8) &&
+          _popup == false) {
+        _popup = true;
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('Photo du jour'),
+            content: Image.network(_spaceData!.url),
+            actions: [okButton],
+          ),
+        );
+      }
+    });
+    _popup = false;
+  }
+
   @override
   void initState() {
     super.initState();
     _fetchSpaceData();
+    _accelerometre();
   }
 
   @override

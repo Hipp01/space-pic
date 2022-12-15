@@ -42,7 +42,7 @@ dependencies:
   vimeo_video_player: ^0.0.6
   intl:
   adaptive_theme: ^3.1.1
-
+  sensors_plus: ^2.0.1
   
 
 dev_dependencies:

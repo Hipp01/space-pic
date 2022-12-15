@@ -16,6 +16,12 @@ class CurrentSpacePictureWidget extends StatelessWidget {
     return InkWell(
       child: Column(
         children: [
+          const Text("Picture of the day",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
+          const Padding(padding: EdgeInsets.all(10)),
           SizedBox(
             height: 150,
             child: ClipRRect(
@@ -25,12 +31,13 @@ class CurrentSpacePictureWidget extends StatelessWidget {
               ),
             ),
           ),
+          const Padding(padding: EdgeInsets.all(10)),
           Text(_spaceData.date),
         ],
       ),
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DetailWidget(spaceData: this._spaceData)));
+            builder: (context) => DetailWidget(spaceData: _spaceData)));
       },
     );
 
