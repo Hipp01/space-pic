@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:space_pic/models/space_data.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
@@ -84,6 +86,20 @@ class _SpaceHomeState extends State<SpaceHome> {
 
   @override
   Widget build(BuildContext context) {
+    if (Provider.of<InternetConnectionStatus>(context) ==
+        InternetConnectionStatus.disconnected) {
+      return Container(
+        height: 20,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.red,
+        child: const Center(
+          child: Text(
+            'No Internet Connection!!!',
+            style: TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        ),
+      );
+    }
     if (_spaceData == null) {
       return const Center(
         child: CircularProgressIndicator(),
