@@ -13,7 +13,8 @@ class DetailWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(spaceData.title),
+          title: Text(
+              "Picture of the ${spaceData.date.substring(8, 10)}-${spaceData.date.substring(5, 7)}-${spaceData.date.substring(0, 4)}"),
         ),
         body: SingleChildScrollView(
           child: Column(
