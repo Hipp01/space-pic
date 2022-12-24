@@ -2,11 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 import 'package:space_pic/models/space_data.dart';
 import 'package:sensors_plus/sensors_plus.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'current_space_picture_widget.dart';
 import 'day_space_widget.dart';
@@ -27,6 +26,9 @@ class _SpaceHomeState extends State<SpaceHome> {
   var _response;
 
   _fetchSpaceData() async {
+    if (_connectivity() == 0) {
+      return 0;
+    }
     var response = await Dio().get(
       "https://api.nasa.gov/planetary/apod",
       queryParameters: {
@@ -67,7 +69,7 @@ class _SpaceHomeState extends State<SpaceHome> {
         showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(
-            title: const Text('Photo du jour'),
+            title: const Text('Picture of the day'),
             content: Image.network(_spaceData!.url),
             actions: [okButton],
           ),
@@ -77,29 +79,37 @@ class _SpaceHomeState extends State<SpaceHome> {
     _popup = false;
   }
 
+  _connectivity() async {
+    var result = await InternetConnectionChecker().hasConnection;
+    if (result == false) {
+      Widget okButton = TextButton(
+        child: Text("OK"),
+        onPressed: () {
+          exit(0);
+        },
+      );
+      showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('No internet connection'),
+          content: const Text('Please check your internet connection'),
+          actions: [okButton],
+        ),
+      );
+    }
+    return 0;
+  }
+
   @override
   void initState() {
     super.initState();
     _fetchSpaceData();
     _accelerometre();
+    _connectivity();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (Provider.of<InternetConnectionStatus>(context) ==
-        InternetConnectionStatus.disconnected) {
-      return Container(
-        height: 20,
-        width: MediaQuery.of(context).size.width,
-        color: Colors.red,
-        child: const Center(
-          child: Text(
-            'No Internet Connection!!!',
-            style: TextStyle(color: Colors.white, fontSize: 12),
-          ),
-        ),
-      );
-    }
     if (_spaceData == null) {
       return const Center(
         child: CircularProgressIndicator(),
