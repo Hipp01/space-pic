@@ -28,7 +28,7 @@ class DaySpaceWidget extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
-                      Utils.associaiteImage(this.spaceData.explanation),
+                      Utils.associaiteImage(spaceData.explanation),
                       fit: BoxFit.cover,
                     ),
                   ),

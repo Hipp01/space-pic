@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -35,7 +37,7 @@ class _SpaceHomeState extends State<SpaceHome> {
         "api_key": "ZpfzqeRQJSvEIA1eNXY8rqhshFD0l1qFzQkesqaU",
         "start_date": _startdate?.toString().substring(0, 10) ??
             DateTime.now()
-                .subtract(Duration(days: 7))
+                .subtract(const Duration(days: 7))
                 .toString()
                 .substring(0, 10),
         "end_date": _enddate?.toString().substring(0, 10) ??
@@ -44,7 +46,7 @@ class _SpaceHomeState extends State<SpaceHome> {
     );
 
     setState(() {
-      _startdate = DateTime.now().subtract(Duration(days: 7));
+      _startdate = DateTime.now().subtract(const Duration(days: 7));
       _enddate = DateTime.now();
       _spaceData = SpaceData.fromJson(response.data[response.data.length - 1]);
       _response = response.data;
@@ -57,7 +59,7 @@ class _SpaceHomeState extends State<SpaceHome> {
       var y = num.parse(event.y.toStringAsFixed(2));
       var z = num.parse(event.z.toStringAsFixed(2));
       Widget okButton = TextButton(
-        child: Text("OK"),
+        child: const Text("OK"),
         onPressed: () {
           Navigator.of(context).pop();
           _popup = false;
@@ -83,7 +85,7 @@ class _SpaceHomeState extends State<SpaceHome> {
     var result = await InternetConnectionChecker().hasConnection;
     if (result == false) {
       Widget okButton = TextButton(
-        child: Text("OK"),
+        child: const Text("OK"),
         onPressed: () {
           exit(0);
         },
@@ -160,7 +162,7 @@ class _SpaceHomeState extends State<SpaceHome> {
               Text(
                   "Données mises à jour le ${DateFormat.yMd().format(_enddate!)} à ${DateFormat.Hms().format(_enddate!)}",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.purple)),
+                  style: const TextStyle(color: Colors.purple)),
           ],
         ),
       ),

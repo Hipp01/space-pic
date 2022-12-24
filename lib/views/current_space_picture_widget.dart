@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:space_pic/models/space_data.dart';
 import 'package:space_pic/utils/utils.dart';
-import 'package:space_pic/views/space_home.dart';
 
 import 'detail_widget.dart';
 
@@ -40,7 +38,5 @@ class CurrentSpacePictureWidget extends StatelessWidget {
             builder: (context) => DetailWidget(spaceData: _spaceData)));
       },
     );
-
-    ;
   }
 }
