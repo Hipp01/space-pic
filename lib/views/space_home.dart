@@ -28,9 +28,6 @@ class _SpaceHomeState extends State<SpaceHome> {
   var _response;
 
   _fetchSpaceData() async {
-    if (_connectivity() == 0) {
-      return 0;
-    }
     var response = await Dio().get(
       "https://api.nasa.gov/planetary/apod",
       queryParameters: {
