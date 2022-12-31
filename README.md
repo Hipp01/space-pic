@@ -1,6 +1,6 @@
- ![](https://www.notion.so/images/page-cover/webb1.jpg)
+ ![](readme/image1.png)
 
-![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/ic_launcher%201.png)
+![](readme/image2.png)
 
 Space Pics
 ==========
@@ -12,40 +12,39 @@ _**LARZUL Hippolyte**_
 
 **Space Pics** est une application mobile d’affichage de photos de l’espace et leurs descriptions, développée en 2022 dans le cadre du cours de Technologies Mobiles.
 
-**Sommaire :**
+## **Sommaire :**
 
-[Space Pictures](#07d21a95-f94e-4fda-9ade-550941ca03af)
 
-[Introduction](#a178e423-b137-4646-ba60-55188fd66a65)
+- [Introduction](#introduction)
 
-[Contrat d’interface](#b246b246-e1f7-4bd7-a3d9-07bc618144d3)
+- [Contrat d’interface](#contrat-dinterface)
 
-[API NASA](#85407e2b-8fcb-4d34-864c-eded0c6ed067)
+  - [API NASA](#api-nasa)
 
-[Traduction](#9059d58a-c857-49a7-a290-7cd1ba31fd18)
+  - [Traduction](#traduction)
 
-[Explications](#313fe82b-90b3-4ed4-bfd3-5a09280a46c3)
+- [Explications](#explications)
 
-[Choix](#af6775e1-fd16-48f2-aaca-3f2f9ac6d988)
+  - [Choix](#choix)
 
-[Nom et Logo](#f4967f9f-2339-49f9-ac78-e1eedb970689)
+    - [Nom et Logo](#nom-et-logo)
 
-[API](#358c774f-9e2c-4ba9-8d0a-94bbb3455857)
+    - [API](#api)
 
-[Librairies](#09e95128-9e74-4842-abb5-8e11f6ab74bc)
+  - [Librairies](#librairies)
 
-[Concepts](#8a4bf4c2-fa68-4ed5-a17f-1023eca49f9e)
+  - [Concepts](#concepts)
 
-[Parc Matériel](#7a3527a4-f3bb-431f-87a9-d42c4973eeac)
+  - [Parc Matériel](#parc-matériel)
 
-[Fonctionnement de l’application](#987de6a7-3c8e-4179-bbb6-737086a4cb4b)
+  - [Fonctionnement de l’application](#fonctionnement-de-lapplication)
 
-[Problèmes rencontrés](#726b8179-cd53-4d76-966a-1a047dcf2a23)
+- [Problèmes rencontrés](#problèmes-rencontrés)
 
-[Solutions apportées](#7dacb4d5-65df-41fa-8acb-9582d4abecb6)
+- [Solutions apportées](#solutions-apportées)
 
-Introduction
-============
+## Introduction
+
 
 **Space Pics** est une application développée en Flutter pour Android, IOS, Windows Desktop, MacOS, Linux et Web dans le cadre du cours de Technologies Mobiles à l’Université de Lille.
 
@@ -287,8 +286,9 @@ Quand l’utilisateur clique sur l’une de ces images, une nouvelle page appara
 
 * Un bouton pour traduire
 
-* Un bouton de retour
+* Un bouton de retour  
 
+  
 Plusieurs fonctionnalités sont disponibles en plus de l’affichage des photos :
 
 * Le rafraîchissement de la vue principale en appuyant sur le bouton ‘refresh’
@@ -301,21 +301,10 @@ Plusieurs fonctionnalités sont disponibles en plus de l’affichage des photos 
 
 Les screenshots suivants montrent le fonctionnement de l’application.
 
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625549.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625549.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672403253880.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672403253880.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625542.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625542.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625527_1.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625527_1.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625513_2.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625513_2.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625527_1%201.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625527_1%201.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625520_2.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625520_2.jpg)
-
-[![](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625534.jpg)](Space%20Pics%20901fd3335be8409b98ea23a01b4dc891/1672399625534.jpg)
+| [![](readme/image5.png)](readme/image5.png) | [![](readme/image6.png)](readme/image6.png) | [![](readme/image7.png)](readme/image7.png) |
+| --- | --- | --- |
+| [![](readme/image8.png)](readme/image8.png) | [![](readme/image8.png)](readme/image8.png) | [![](readme/image9.png)](readme/image9.png) | 
+| [![](readme/image10.png)](readme/image10.png) | [![](readme/image11.png)](readme/image11.png) | 
 
 Problèmes rencontrés
 ====================
@@ -337,6 +326,7 @@ Problèmes rencontrés
     * Changement de type de date pour la traduction
     
     * Découper la réponse pour la traduction
+
 
 Solutions apportées
 ===================
@@ -362,3 +352,4 @@ Solutions apportées
     * Une page est consacrée à chaque jour, avec pour paramètre la date mais sous un format différent de celui récupéré initialement. Des manipulations sont alors appliquées sur la date dans la requête pour ensuite obtenir la page de chaque jour.
     
     * La donnée récupérée est alors du code HTML, qui est ensuite découpé selon une balise ‘&lt;p&gt;’ pour obtenir la description en français, qui est affichée quand l’utilisateur clique sur le bouton ‘Translate’.
+
